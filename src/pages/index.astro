@@ -14,7 +14,7 @@ import "./src/styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Vans BREAKAWAY</title>
   </head>
-  <body>
+  <body class="bg-gray-100 overflow-x-hidden">
     <div class="flex justify-center mt-5 ml-2">
       <Image src={vanslogo} alt="" class="w-xl md:w-2xl" />
       <div
@@ -23,8 +23,89 @@ import "./src/styles/global.css";
         <Image src={breakaway} alt="" class="self-center w-auto h-[80%]" />
       </div>
     </div>
-    <div class="flex justify-center m-5">
-      <Image src={vansbase} alt="Vans base" class="w-[500px]" />
+    <div
+      class="flex flex-wrap justify-center m-5 mt-12 overflow-x-hidden align-middle"
+    >
+      <Image
+        src={vansbase}
+        alt="Vans base"
+        class="w-[500px] h-auto object-contain"
+      />
+      <div class="mt-10 md:ml-10">
+        <div>
+          <h2 class="font-semibold text-2xl">Color 1:</h2>
+          <div>
+            <select
+              name="colors"
+              id="color"
+              class="bg-gray-200 shadow-sm mt-2 mb-7 px-5 rounded-lg outline-none w-fit h-[40px]"
+            >
+              <option value="" hidden>selecciona un color</option>
+              <option value="negro">Negro</option>
+              <option value="rojo">Rojo</option>
+              <option value="blanco">Blanco</option>
+              <option value="rosa">Rosa</option>
+              <option value="verde">Verde</option>
+              <option value="celeste">Celeste</option>
+              <option value="amarillo">Amarillo</option>
+              <option value="naranja">Naranja</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-semibold text-2xl">Color 2:</h2>
+          <div>
+            <select
+              name="colors"
+              id="color"
+              class="bg-gray-200 shadow-sm mt-2 mb-7 px-5 rounded-lg outline-none w-fit h-[40px]"
+            >
+              <option value="" hidden>selecciona un color</option>
+              <option value="negro">Negro</option>
+              <option value="rojo">Rojo</option>
+              <option value="blanco">Blanco</option>
+              <option value="rosa">Rosa</option>
+              <option value="verde">Verde</option>
+              <option value="celeste">Celeste</option>
+              <option value="amarillo">Amarillo</option>
+              <option value="naranja">Naranja</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <h2 class="font-semibold text-2xl">Color 3:</h2>
+          <div>
+            <select
+              name="colors"
+              id="color"
+              class="bg-gray-200 shadow-sm mt-2 mb-7 px-5 rounded-lg outline-none w-fit h-[40px]"
+            >
+              <option value="" hidden>selecciona un color</option>
+              <option value="negro">Negro</option>
+              <option value="rojo">Rojo</option>
+              <option value="blanco">Blanco</option>
+              <option value="rosa">Rosa</option>
+              <option value="verde">Verde</option>
+              <option value="celeste">Celeste</option>
+              <option value="amarillo">Amarillo</option>
+              <option value="naranja">Naranja</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <label class="font-semibold text-2xl" for="texto">Texto: </label>
+          <textarea
+            id="texto"
+            class="bg-gray-200 shadow-sm mt-2 mb-7 px-5 py-2 rounded-lg outline-none w-fit h-[125px]"
+            placeholder='Ingresa el texto que quieres ponerle a tu zapatilla. por ejemplo: "Erick"'
+          ></textarea>
+        </div>
+        <input
+          type="submit"
+          value="¡Personalizar!"
+          class="bg-[#241f21] py-4 rounded-xl w-full font-bold text-white text-xl text-center"
+        />
+      </div>
     </div>
   </body>
 </html>
