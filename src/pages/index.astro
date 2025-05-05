@@ -1,16 +1,30 @@
 ---
-
+import { Image } from "astro:assets";
+import vanslogo from "../assets/vanslogo.png";
+import vansbase from "../assets/vans-base.png";
+import breakaway from "../assets/breakaway.png";
+import "./src/styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/vans-favicon.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Vans BREAKAWAY</title>
+  </head>
+  <body>
+    <div class="flex justify-center mt-5 ml-2">
+      <Image src={vanslogo} alt="" class="w-xl md:w-2xl" />
+      <div
+        class="flex justify-center bg-[#241f21] mt-[1px] ml-[-73%] sm:ml-[-450px] md:ml-[-510px] w-full h-[5%] sm:h-[46px] align-middle"
+      >
+        <Image src={breakaway} alt="" class="self-center w-auto h-[80%]" />
+      </div>
+    </div>
+    <div>
+      <Image src={vanslogo} alt="Vans Logo" class="w-xl md:w-2xl" />
+    </div>
+  </body>
 </html>
