@@ -2,6 +2,16 @@
 import { Image } from "astro:assets";
 import vanslogo from "../assets/vanslogo.png";
 import vansbase from "../assets/vans-base.png";
+import aleksandro1 from "../assets/aleksandro-blanco-rojo.jpeg";
+import aleksandro2 from "../assets/aleksandro-rojo-amarillo-verde.jpeg";
+import angela1 from "../assets/angela-celeste-rosa-negro.jpeg";
+import angela2 from "../assets/angela-verde-blanco.jpeg";
+import erick1 from "../assets/erick-celeste-amarillo.jpeg";
+import erick2 from "../assets/erick-rojo-negro.jpeg";
+import khalid1 from "../assets/khalid-rojo.jpeg";
+import khalid2 from "../assets/khalid-verde.jpeg";
+import yeramin1 from "../assets/yeramin-celeste-negro.jpeg";
+import yeramin2 from "../assets/yeramin-verde-amarillo.jpeg";
 import breakaway from "../assets/breakaway.png";
 import "./../styles/global.css";
 ---
@@ -16,20 +26,87 @@ import "./../styles/global.css";
   </head>
   <body class="bg-gray-100 overflow-x-hidden">
     <div class="flex justify-center mt-5 ml-2">
-      <Image src={vanslogo} alt="" class="w-xl md:w-2xl" />
+      <Image src={vanslogo} alt="" loading="eager" class="w-xl md:w-2xl" />
       <div
         class="flex justify-center bg-[#241f21] mt-[1px] ml-[-73%] sm:ml-[-450px] md:ml-[-510px] w-full h-[5%] sm:h-[46px] align-middle"
       >
-        <Image src={breakaway} alt="" class="self-center w-auto h-[80%]" />
+        <Image
+          src={breakaway}
+          alt=""
+          loading="eager"
+          class="self-center w-auto h-[80%]"
+        />
       </div>
     </div>
     <div
-      class="flex flex-wrap justify-center m-5 mt-12 overflow-x-hidden align-middle"
+      class="flex flex-wrap justify-center m-5 mt-10 md:mt-0 overflow-x-hidden align-middle"
     >
       <Image
         src={vansbase}
+        id="vansbase"
+        loading="eager"
         alt="Vans base"
         class="w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={aleksandro1}
+        id="aleksandro1"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={aleksandro2}
+        id="aleksandro2"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={angela1}
+        id="angela1"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={angela2}
+        id="angela2"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={erick1}
+        id="erick1"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={erick2}
+        id="erick2"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={khalid1}
+        id="khalid1"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={khalid2}
+        id="khalid2"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={yeramin1}
+        id="yeramin1"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
+      />
+      <Image
+        src={yeramin2}
+        id="yeramin2"
+        alt="Vans base"
+        class="hidden w-[500px] h-auto object-contain"
       />
       <div class="mt-10 md:ml-10">
         <div>
@@ -49,6 +126,7 @@ import "./../styles/global.css";
               <option value="celeste">Celeste</option>
               <option value="amarillo">Amarillo</option>
               <option value="naranja">Naranja</option>
+              <option value="ninguno">Ninguno</option>
             </select>
           </div>
         </div>
@@ -69,6 +147,7 @@ import "./../styles/global.css";
               <option value="celeste">Celeste</option>
               <option value="amarillo">Amarillo</option>
               <option value="naranja">Naranja</option>
+              <option value="ninguno">Ninguno</option>
             </select>
           </div>
         </div>
@@ -89,6 +168,7 @@ import "./../styles/global.css";
               <option value="celeste">Celeste</option>
               <option value="amarillo">Amarillo</option>
               <option value="naranja">Naranja</option>
+              <option value="ninguno">Ninguno</option>
             </select>
           </div>
         </div>
@@ -96,16 +176,30 @@ import "./../styles/global.css";
           <label class="font-semibold text-2xl" for="texto">Texto:</label>
           <textarea
             id="texto"
+            name="textoDiseño"
             class="bg-gray-200 shadow-sm mt-2 mb-7 px-5 py-2 rounded-lg outline-none w-fit h-[125px]"
             placeholder='Ingresa el texto que quieres ponerle a tu zapatilla. por ejemplo: "Erick"'
           ></textarea>
         </div>
         <input
           type="submit"
+          id="submitbutton"
           value="¡Personalizar!"
-          class="bg-[#241f21] py-4 rounded-xl w-full font-bold text-white text-xl text-center"
+          class="bg-[#241f21] py-4 rounded-xl w-full font-bold text-white text-xl text-center cursor-pointer"
         />
       </div>
+      <script>
+        document.addEventListener("astro:page-load", () => {
+          const base = document.getElementById("vansbase");
+          const submitButton = document.getElementById(
+            "submitbutton"
+          ) as HTMLInputElement;
+          submitButton.addEventListener("submit", (e) => {
+            e.preventDefault();
+          });
+        });
+        const colorSelects = document.querySelectorAll("select");
+      </script>
     </div>
   </body>
 </html>
